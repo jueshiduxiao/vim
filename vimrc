@@ -92,6 +92,9 @@ autocmd! BufNewFile,BufRead * setlocal nofoldenable
 nmap <silent> <Leader>nt :NERDTreeToggle<CR>
 nmap <silent> <Leader>nf :NERDTreeFind<CR>
 
+" FuzzyFinder快捷键
+nmap <silent> <c-j> :FufFile<CR>
+nmap <silent> <space> :FufBuffer<CR>
 
 " 删除所有行未尾空格
 " nnoremap <f12> :%s/[ \t\r]\+$//g<cr>
