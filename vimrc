@@ -98,7 +98,15 @@ nnoremap <silent> <Leader>nf :NERDTreeFind<CR>
 
 " FuzzyFinder快捷键
 nnoremap <silent> <c-j> :FufFile<CR>
-nnoremap <silent> <space> :FufBuffer<CR>
+" nnoremap <silent> <space> :FufBuffer<CR>
+
+" MRU
+nnoremap <silent> <space> :MRU<cr>
+let MRU_File = $HOME."/.vimbackup/.vim_mru_files"
+let MRU_Max_Entries = 1000
+
+" 删除行未尾空格
+nnoremap <f12> :%s / $//g<cr>
 
 
 

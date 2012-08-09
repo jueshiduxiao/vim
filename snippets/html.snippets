@@ -1,0 +1,29 @@
+snippet html
+	<!DOCTYPE HTML>
+	<html>
+	<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title>${1}</title>
+	<link rel="stylesheet" type="text/css" charset="utf-8" href="http://127.0.0.1/web/css/reset.css" />
+	<link rel="stylesheet" type="text/css" charset="utf-8" href="http://127.0.0.1/web/css/global.css" />
+	</head>
+	<body>
+
+	${2}
+	<script type="text/javascript" charset="utf-8" src="http://127.0.0.1/web/scripts/lib/jquery.js"></script>
+	<script type="text/javascript" charset="utf-8" src="http://127.0.0.1/web/scripts/lib/sea.js"></script>
+	<script type="text/javascript" charset="utf-8" src="http://127.0.0.1/web/scripts/lib/jquery.tmpl.js"></script>
+	<script type="text/javascript">
+	seajs.config({
+		charset: 'utf-8',
+		timeout: 20000,
+		debug: 2
+	});
+	seajs.use([
+		'../../scripts/common/es5'
+	]);
+	</script>
+	</body>
+	</html>
+snippet script:src
+	<script type="text/javascript" charset="utf-8" src="${1}"></script>
