@@ -1,12 +1,17 @@
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " 一般设置
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " 关闭VI的兼容模式
 set nocompatible
 " 显示行号
 set number
-" 设置tab键为4个空格
+" 设置缩进
+set smarttab
 set tabstop=4
+set softtabstop=4
+set shiftwidth=4
+set linespace=4
+set expandtab 
 " 设定 << 和 >> 命令移动时的宽度为 4
 set shiftwidth=4
 " 设置在编辑过程中,于右下角显示光标位置的状态行
@@ -26,13 +31,11 @@ colorscheme  molokai
 set cursorline
 set cursorcolumn
 " 设定列宽
-set colorcolumn=80
+set colorcolumn=81
 " 编码字体设置
-set termencoding=chinese
+let &termencoding=&encoding
 set fileencodings=ucs-bom,utf-8,cp936,cp950,latin1
-set ambiwidth=double
-set guifont=Consolas:h13.0
-set fenc=utf-8
+set fileformat=unix
 " 解决自动换行格式下, 如高度在折行之后超过窗口高度结果这一行看不到的问题
 set display=lastline
 " 不自动换行
@@ -47,21 +50,22 @@ set laststatus=2
 set showmatch
 " 设置GUI
 if has("gui_running")
-    " set guioptions-=m " 隐藏菜单栏
-    " set guioptions-=T " 隐藏工具栏
+    set guioptions-=m " 隐藏菜单栏
+    set guioptions-=T " 隐藏工具栏
     set guioptions-=L " 隐藏左侧滚动条
     set guioptions-=r " 隐藏右侧滚动条
     set guioptions-=b " 隐藏底部滚动条
     set showtabline=0 " 隐藏Tab栏
+    set guifont=Consolas:h13.0
 endif
 "启动时不显示 捐赠提示
 set shortmess=atl
 
 
 
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " 开始折叠
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " set foldenable
 " 设置语法折叠
 " manual  手工定义折叠
@@ -81,20 +85,25 @@ set foldmethod=indent
 "zC 循环关闭 (Close) 在光标下的所有折叠
 "zM 关闭所有可折叠区域
 " 新建的文件，刚打开的文件不折叠
-autocmd! BufNewFile,BufRead * setlocal nofoldenable
+" autocmd! BufNewFile,BufRead * setlocal nofoldenable
 
 
 
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " 快捷键
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " NERDTree快捷键 
-nmap <silent> <Leader>nt :NERDTreeToggle<CR>
-nmap <silent> <Leader>nf :NERDTreeFind<CR>
+nnoremap <silent> <Leader>nt :NERDTreeToggle<CR>
+nnoremap <silent> <Leader>nf :NERDTreeFind<CR>
 
 " FuzzyFinder快捷键
-nmap <silent> <c-j> :FufFile<CR>
-nmap <silent> <space> :FufBuffer<CR>
+nnoremap <silent> <c-j> :FufFile<CR>
+nnoremap <silent> <space> :FufBuffer<CR>
 
-" 删除所有行未尾空格
-" nnoremap <f12> :%s/[ \t\r]\+$//g<cr>
+
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" pathogen
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+call pathogen#infect()
+Helptags
