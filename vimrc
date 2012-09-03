@@ -34,8 +34,11 @@ set cursorcolumn
 set colorcolumn=81
 " 编码字体设置
 let &termencoding=&encoding
-set fileencodings=ucs-bom,utf-8,cp936,cp950,latin1
+set fileencodings=ucs-bom,utf-8,gbk,cp936,cp950,latin1
 set fileformat=unix
+set encoding=utf-8
+set langmenu=zh_CN.UTF-8
+language message zh_CN.UTF-8
 " 解决自动换行格式下, 如高度在折行之后超过窗口高度结果这一行看不到的问题
 set display=lastline
 " 不自动换行
@@ -95,18 +98,21 @@ set foldmethod=indent
 " NERDTree快捷键 
 nnoremap <silent> <Leader>nt :NERDTreeToggle<CR>
 nnoremap <silent> <Leader>nf :NERDTreeFind<CR>
+nnoremap <silent> <Leader>nr :NERDTree %:p:h<CR>
 
 " FuzzyFinder快捷键
 nnoremap <silent> <c-j> :FufFile<CR>
 " nnoremap <silent> <space> :FufBuffer<CR>
 
 " MRU
-nnoremap <silent> <space> :MRU<cr>
+nnoremap <silent> <c-u> :MRU<cr>
 let MRU_File = $HOME."/.vimbackup/.vim_mru_files"
 let MRU_Max_Entries = 1000
 
 " 删除行未尾空格
 nnoremap <f12> :%s / $//g<cr>
+" 设置为当前文件目录
+nnoremap <f11> :set autochdir<cr>
 
 
 

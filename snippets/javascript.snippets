@@ -14,3 +14,25 @@ snippet define
 	});
 snippet log
 	console.log(${1});
+snippet mod
+	var Mod = {
+		init: function () {
+		${1}
+		}
+	};
+	Mod.init();
+snippet ajax
+	$.ajax({
+		cache: false,
+		dataType: 'json',
+		timeout: 30000,
+		type: 'GET',
+		url: '',
+		success: function (data) {
+		},
+		error: function (xhr) {
+		}
+	});
+snippet time
+	var __b = +new Date();
+	console.log(+new Date() - __b);
