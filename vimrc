@@ -113,6 +113,9 @@ let MRU_Max_Entries = 1000
 nnoremap <f12> :%s / $//g<cr>
 " 设置为当前文件目录
 nnoremap <f11> :set autochdir<cr>
+" 行号的显示隐藏
+nnoremap <f4> :set number<cr>
+nnoremap <f5> :set nonumber<cr>
 
 
 
