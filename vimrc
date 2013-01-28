@@ -25,6 +25,7 @@ set backspace=indent,eol,start
 " 或者 set autoindent vim使用自动对齐，也就是把当前行的对齐格式应用到下一行
 set ai
 " 设定配色方案
+set t_Co=256
 colorscheme  molokai
 " colorscheme  desert
 " 高亮当前行列
@@ -61,8 +62,16 @@ if has("gui_running")
     set showtabline=0 " 隐藏Tab栏
     set guifont=Consolas:h13.0
 endif
+if has("win32") || has("win64")
+      set runtimepath=$CUSTOMVIMRUNTIME,$VIMRUNTIME,$CUSTOMVIMRUNTIME/after
+    endif
 "启动时不显示 捐赠提示
 set shortmess=atl
+
+
+set list "显示不可见字符 默认的太不好看了
+"set listchars=tab:\|\ ,trail:.,extends:>,precedes:<
+set listchars=tab:\:\ ,trail:~,extends:>,precedes:<,nbsp:\.
 
 
 
@@ -90,6 +99,9 @@ set foldmethod=indent
 " 新建的文件，刚打开的文件不折叠
 " autocmd! BufNewFile,BufRead * setlocal nofoldenable
 
+" 
+" au BufRead,BufNewFile *.vm set filetype=html
+
 
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -101,13 +113,15 @@ nnoremap <silent> <Leader>nf :NERDTreeFind<CR>
 nnoremap <silent> <Leader>nr :NERDTree %:p:h<CR>
 
 " FuzzyFinder快捷键
-nnoremap <silent> <c-j> :FufFile<CR>
+let g:fuf_dataDir = $HOME."/.vim_backup/.vim-fuf-data"
+nnoremap <silent> <Leader>f :FufFile<CR>
 " nnoremap <silent> <space> :FufBuffer<CR>
 
 " MRU
 nnoremap <silent> <c-u> :MRU<cr>
-let MRU_File = $HOME."/.vimbackup/.vim_mru_files"
+let MRU_File = $HOME."/.vim_backup/.mru_files"
 let MRU_Max_Entries = 1000
+set autochdir
 
 " 删除行未尾空格
 nnoremap <f12> :%s / $//g<cr>
@@ -116,6 +130,9 @@ nnoremap <f11> :set autochdir<cr>
 " 行号的显示隐藏
 nnoremap <f4> :set number<cr>
 nnoremap <f5> :set nonumber<cr>
+
+" 行号的显示隐藏
+nnoremap <silent> <Leader><Space> :nohl<cr>
 
 
 
