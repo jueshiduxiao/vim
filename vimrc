@@ -115,7 +115,7 @@ nnoremap <silent> <Leader>nr :NERDTree %:p:h<CR>
 " FuzzyFinder快捷键
 let g:fuf_dataDir = $HOME."/.vim_backup/.vim-fuf-data"
 nnoremap <silent> <Leader>f :FufFile<CR>
-" nnoremap <silent> <space> :FufBuffer<CR>
+nnoremap <silent> <Leader>j :FufBuffer<CR>
 
 " MRU
 nnoremap <silent> <c-u> :MRU<cr>
