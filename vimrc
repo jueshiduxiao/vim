@@ -131,9 +131,11 @@ nnoremap <f11> :set autochdir<cr>
 nnoremap <f4> :set number<cr>
 nnoremap <f5> :set nonumber<cr>
 
-" 行号的显示隐藏
+" 去掉高亮显示
 nnoremap <silent> <Leader><Space> :nohl<cr>
 
+" 粘贴
+set pastetoggle=<F10>
 
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
