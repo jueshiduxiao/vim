@@ -7,13 +7,13 @@ set nocompatible
 set number
 " 设置缩进
 set smarttab
-set tabstop=4
-set softtabstop=4
-set shiftwidth=4
-set linespace=4
+set tabstop=2
+set softtabstop=2
+set shiftwidth=2
+set linespace=2
 set expandtab 
 " 设定 << 和 >> 命令移动时的宽度为 4
-set shiftwidth=4
+set shiftwidth=2
 " 设置在编辑过程中,于右下角显示光标位置的状态行
 set ruler
 " 高亮语法
@@ -118,7 +118,7 @@ nnoremap <silent> <Leader>f :FufFile<CR>
 nnoremap <silent> <Leader>j :FufBuffer<CR>
 
 " MRU
-nnoremap <silent> <c-u> :MRU<cr>
+nnoremap <silent> <c-i> :MRU<cr>
 let MRU_File = $HOME."/.vim_backup/.mru_files"
 let MRU_Max_Entries = 1000
 set autochdir
