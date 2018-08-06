@@ -111,6 +111,11 @@ set foldmethod=indent
 nnoremap <silent> <Leader>nt :NERDTreeToggle<CR>
 nnoremap <silent> <Leader>nf :NERDTreeFind<CR>
 nnoremap <silent> <Leader>nr :NERDTree %:p:h<CR>
+" 显示行号
+let NERDTreeShowLineNumbers=1
+let NERDTreeAutoCenter=1
+" 是否显示隐藏文件
+let NERDTreeShowHidden=1
 
 " FuzzyFinder快捷键
 let g:fuf_dataDir = $HOME."/.vim_backup/.vim-fuf-data"
